@@ -1,12 +1,12 @@
 from aiogram import types, Bot, Dispatcher, executor
-from data import Api_token
+from data import Api_Token
 from buttons import asosiy_menu, menuMain, menuBack, menuMene, menuKoz, menuizi
 
 
-bot = Bot(token=Api_token)
+bot = Bot(token=Api_Token)
 dp = Dispatcher(bot)
 
-@dp.message_handler(commands="start")
+@dp.message_handler(commands=["start"])
 async def start_handler(message:types.Message):
     await message.answer("Этот бот помогает дарить больше улыбок детям.\nДобро пожаловать в десткий хоспис Taskin.🥳",reply_markup=asosiy_menu)
 
